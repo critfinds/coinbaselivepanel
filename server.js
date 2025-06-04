@@ -51,7 +51,7 @@ async function sendToTelegram(step, data) {
       .join('\n');
 
   try {
-    const res = await fetch(`https://api.telegram.org/bot/7224075845:AAHQDVu4GNQ6BIuxxO1HSgtrJYgURYczy5w/sendMessage`, {
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
